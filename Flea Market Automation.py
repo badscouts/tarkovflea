@@ -4,14 +4,16 @@ import pytesseract
 import pyautogui
 import re
 import time
-import platform
+import os
 
 # Specify the path to the tesseract executable if needed
 # For example, on Windows:
-if platform.system() == 'Windows':
-    pytesseract.pytesseract.tesseract_cmd = r'*\Tesseract-OCR-Windows\tesseract.exe'
+current_directory = os.getcwd()
+
+if os.name == 'nt':
+    pytesseract.pytesseract.tesseract_cmd = current_directory + r'\Tesseract-OCR-Windows\tesseract.exe'
 else:
-    pytesseract.pytesseract.tesseract_cmd = r'*\Tesseract-OCR-Linux\tesseract'
+    pytesseract.pytesseract.tesseract_cmd = r'\Tesseract-OCR-Linux\tesseract'
 
 def capture_and_read_text():
     global text
