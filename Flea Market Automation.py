@@ -10,7 +10,7 @@ import platform
 # For example, on Windows:
 if platform.system() == 'Windows':
     pytesseract.pytesseract.tesseract_cmd = r'*\Tesseract-OCR-Windows\tesseract.exe'
-else
+else:
     pytesseract.pytesseract.tesseract_cmd = r'*\Tesseract-OCR-Linux\tesseract'
 
 def capture_and_read_text():
