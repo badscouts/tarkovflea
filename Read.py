@@ -2,7 +2,7 @@ import keyboard
 from PIL import Image
 import pytesseract
 import pyautogui
-import re
+import re # Test
 import time
 import os
 '''
