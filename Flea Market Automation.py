@@ -13,7 +13,7 @@ def capture_and_read_text():
     global text
 
     # Define the region to capture (left, top, width, height)
-    region = (1785, 210, 214, 48)  # Adjust these values as needed
+    region = (1305, 374, 128, 29)  # Adjust these values as needed
 
     # Capture the screen region
     screenshot = pyautogui.screenshot(region=region)
@@ -104,6 +104,8 @@ def combined(event=None):
     capture_and_read_text()
     input_price()
     click_on_sell()
+    pyautogui.click(1650, 108)
+    pyautogui.moveTo(400, 1000)
 
 
 keyboard.add_hotkey('F10', capture_and_read_text)
