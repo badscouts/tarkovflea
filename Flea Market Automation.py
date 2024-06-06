@@ -102,6 +102,7 @@ def combined(event=None):
     capture_and_read_text()
     input_price()
     click_on_sell()
+    time.sleep(0.2)
     pyautogui.click(1650, 108)
     pyautogui.moveTo(400, 1000)
 
@@ -110,11 +111,9 @@ keyboard.add_hotkey('F10', capture_and_read_text)
 keyboard.on_release_key('F9', input_price)
 keyboard.add_hotkey('F8', click_on_sell)
 keyboard.on_release_key('F7', combined)
-keyboard.on_release_key('F3', test)
 
 print("Press F10 to capture the screen region and perform OCR.")
 print("Press F9 to input price.")
 print("Press F8 to click on the sell button.")
 print("Press F7 to do all at once")
-print("Press F3 to check for filter")
 keyboard.wait('shift+esc')  # You can change this to another key to exit the script
