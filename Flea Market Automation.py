@@ -21,8 +21,9 @@ def capture_and_read_text():
     # Perform OCR on the captured screenshot
     text = pytesseract.image_to_string(screenshot)
 
-    # Print the extracted text
-    # Remove 'P' from the end of the text if it exists
+    # Change @ and a to 0, previously had an issue where it would sometimes read 0 as one of these two due to a space(?)
+    text = re.sub(r'@' or r'a', '0', text)
+    # Find and replace all characters that aren't digits with nothing
     text = re.sub(r'\D', '', text)
     print("Extracted Text:", text)
     return text
@@ -91,9 +92,6 @@ def find_text_on_screen(x, y, w ,h, word_to_find = "FILTER BY ITEM"):
         print("Word not found")
     return text_filter
 
-
-def test(event=None):
-    find_text_on_screen(0, 343, 1480, 1096, "FILTER BY ITEM")
 
 def click_on_sell():
     pyautogui.click(1173, 1351)
