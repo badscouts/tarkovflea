@@ -55,7 +55,7 @@ def input_price(event=None):  # Accept an optional event argument
     pyautogui.click(1004, 846)
     if text:
         number = int(text)
-        number -= 1000
+        #number -= 1000
         keys = str(number)
         print("Keys:", keys)
         for key in keys:
@@ -105,6 +105,7 @@ def combined(event=None):
     time.sleep(0.2)
     pyautogui.click(1650, 108)
     pyautogui.moveTo(400, 1000)
+    
 
 
 keyboard.add_hotkey('F10', capture_and_read_text)
